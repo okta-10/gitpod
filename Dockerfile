@@ -4,6 +4,9 @@ LABEL maintainer "Oktapra Amtono <oktapra.amtono@gmail.com>"
 
 USER root
 
+ENV TZ=Asia/Jakarta
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN sudo apt-get update -y \
     && sudo apt-get upgrade -y \
     && sudo apt-get dist-upgrade -y \
@@ -75,6 +78,7 @@ RUN sudo apt-get update -y \
     tzdata \
     u-boot-tools \
     unzip \
+    unrar \
     wget \
     x11proto-core-dev \
     xsltproc \
