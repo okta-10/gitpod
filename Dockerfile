@@ -90,7 +90,7 @@ RUN sudo apt-get update -y \
 RUN sudo apt-get update -y \
     && sudo apt-get upgrade -y \
     && sudo apt-get dist-upgrade -y \
-    && sudo apt-get autoclean \
-    && sudo apt-get autoremove
+    && sudo apt-get autoclean -y \
+    && sudo apt-get autoremove -y
 
-RUN sudo rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
+RUN sudo rm -rf /var/cache/apt/* && sudo rm -rf /var/lib/apt/lists/* && sudo rm -rf /tmp/*
